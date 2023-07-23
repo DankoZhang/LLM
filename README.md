@@ -12,4 +12,5 @@
 
 * peft==0.4.0
 
-  如果启用load_in_8bit，则还需要安装accelerate、bitsandbytes
+如果启用load_in_8bit，则还需要安装accelerate、bitsandbytes
+2、环境配置：
