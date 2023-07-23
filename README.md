@@ -54,3 +54,5 @@ CUDA_VISIBLE_DEVICES=1,2 python train.py --train_args_file ./conf/chatglm2_6b_lo
 ```python
 CUDA_VISIBLE_DEVICES=1 python inference.py --model_name_or_path ../../chatglm2-6b-model/ --lora_checkpoint ./output/adgen-chatglm2-6b-lora/
 ```
+4、备注：
+* 采用transformers.Trainer框架进行训练时，内部已经实现数据并行策略，因此不需要做类似DDP、Accelerate等框架的封装工作。另外，保存模型调用的save_pretrained方法，会自动保存主进程的模型，因此也不用进行是否是主进程的判断。
