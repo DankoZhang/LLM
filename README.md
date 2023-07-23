@@ -11,3 +11,5 @@
 * torch==1.13.0+cu116
 
 * peft==0.4.0
+
+如果启用load_in_8bit，则还需要安装accelerate、bitsandbytes
