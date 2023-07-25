@@ -12,7 +12,7 @@
 
 * peft==0.4.0
 
-如果启用load_in_8bit，则还需要安装accelerate、bitsandbytes
+如果启用load_in_8bit，则还需要安装accelerate、bitsandbytes、scipy、tensorboardX
 
 2、启动训练：
 * 数据并行:
