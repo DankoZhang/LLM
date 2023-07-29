@@ -1,5 +1,5 @@
 # LLM
-本项目实现LLM微调，包括ChatGLM-6B+LoRA、ChatGLM2-6B+LoRA等方案。
+本项目实现LLM微调，包括ChatGLM-6B+LoRA、ChatGLM2-6B+LoRA、ChatGLM-6B+LoRA+Accelerate+Deepspeed等方案。
 ## 一、ChatGLM-6B+LoRA
 1、环境配置：
 * transformers==4.30.2
