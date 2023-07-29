@@ -62,7 +62,7 @@ CUDA_VISIBLE_DEVICES=1 python inference.py --model_name_or_path ../../chatglm2-6
 
 2、启动训练：
 ```python
-accelerate launch --config_file ./conf/accelerate_config.yaml
+accelerate launch --config_file ./conf/accelerate_config.yaml train.py
 ```
 3、启动推理：
 ```python
