@@ -71,7 +71,7 @@ def train(args):
         # 不需要使用model.half().cuda(), trainer会将模型加载至显卡上(trainer.py line510), 推理时就需要了
         model = model.half()
 
-    # 此处个人认为没什么用处, 因为上述line62如果启用了模型并行, 此处不启用也没关系(trainer.py line391，)
+    # 此处个人认为没什么用处, 因为上述line62如果启用了模型并行, 此处不启用也没关系(trainer.py line391，会进行设置)
     # 但是反过来不行，如果此处启用了模型并行, 那么line62也必须开启, 否则trainer会将模型加载至cpu
     if args.model_parallel:
         model.is_parallelizable = True
