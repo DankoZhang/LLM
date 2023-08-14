@@ -1,7 +1,7 @@
 # LLM
 本项目实现LLM微调，包括ChatGLM-6B+LoRA、ChatGLM2-6B+LoRA、ChatGLM-6B+LoRA+Accelerate+Deepspeed等方案。
 ## 一、ChatGLM-6B+LoRA
-1、环境配置：
+1、环境配置：以下所有安装包的版本都是推荐，可按实际情况自行调整
 * transformers==4.30.2
 
 * datasets==2.10.1
@@ -35,7 +35,7 @@ CUDA_VISIBLE_DEVICES=1,2 python train.py --train_args_file ./conf/chatglm_6b_lor
 CUDA_VISIBLE_DEVICES=1 python inference.py --model_name_or_path ../../chatglm-6b-model/ --lora_checkpoint ./output/adgen-chatglm-6b-lora/
 ```
 ## 二、ChatGLM2-6B+LoRA
-1、环境配置：
+1、环境配置：以下所有安装包的版本都是推荐，可按实际情况自行调整
 * transformers==4.30.2
 
 * datasets==2.10.1
