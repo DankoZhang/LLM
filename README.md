@@ -13,6 +13,13 @@
 * peft==0.4.0
 
 如果启用load_in_8bit，则还需要安装accelerate、bitsandbytes、scipy、tensorboardX
+* accelerate==0.21.0
+
+* bitsandbytes==0.41.0
+
+* scipy==1.11.1
+
+* tensorboardX==2.6.1
 
 2、启动训练：
 * 数据并行:
@@ -39,7 +46,14 @@ CUDA_VISIBLE_DEVICES=1 python inference.py --model_name_or_path ../../chatglm-6b
 
 * peft==0.4.0
 
-如果启用load_in_8bit，则还需要安装accelerate、bitsandbytes
+如果启用load_in_8bit，则还需要安装accelerate、bitsandbytes、scipy、tensorboardX
+* accelerate==0.21.0
+
+* bitsandbytes==0.41.0
+
+* scipy==1.11.1
+
+* tensorboardX==2.6.1
 
 2、启动训练：
 * 数据并行:
