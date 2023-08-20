@@ -97,7 +97,7 @@ def train(args):
         # 向前传播的过程中使用torch.no_grad()不去存储中间激活值，降低动态显存的占用。而只是保存输入和激活函数，当进行反向传播的时候，会重新获取输入和激活函数计算激活值用于梯度计算。因此向前传播会计算两遍，所以需要更多的训练时间。
         model.gradient_checkpointing_enable()
         model.enable_input_require_grads()
-    # use_cache设置为False，是因为和gradient checkpoint存在冲突。因为use_cache是对解码速度的优化，在解码器解码时，存储每一步输出的hidden-state用于下一步的输入，而因为开启了gradient checkpoint，中间激活值不会存储，因此use_cahe=False
+    # use_cache设置为False，是因为和gradient checkpoint存在冲突。因为use_cache是对解码速度的优化，在解码器解码时，存储每一步输出的hidden state用于下一步的输入，而因为开启了gradient checkpoint，中间激活值不会存储，因此use_cahe=False
     model.config.use_cache = False
     
     # add LoRA adaptor
