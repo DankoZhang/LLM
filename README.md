@@ -69,7 +69,8 @@ CUDA_VISIBLE_DEVICES=1,2 python train.py --train_args_file ./conf/chatglm2_6b_lo
 CUDA_VISIBLE_DEVICES=1 python inference.py --model_name_or_path ../../chatglm2-6b-model/ --lora_checkpoint ./output/adgen-chatglm2-6b-lora/
 ```
 4、备注：
-* 采用transformers.Trainer框架进行训练时，内部已经实现数据并行策略，因此不需要做类似DDP、Accelerate等框架的封装工作。另外，保存模型调用的save_pretrained方法，会自动保存主进程的模型，因此也不用进行是否是主进程的判断。
+* 采用transformers.Trainer框架进行训练时，内部已经实现数据并行策略，因此不需要做类似DDP、Accelerate等框架的封装工作。另外，保存模型调用的save_pretrained方法，会自动保存主进程的模型，因此也不用进行是否是主进程的判断；
+* model.chat()方法中，max_length指的是输入+输出的长度，详见[model.chat()方法中的max_length](https://github.com/THUDM/ChatGLM-6B/issues/812)
 ## 三、ChatGLM-6B+LoRA+Accelerate+Deepspeed
 1、环境配置：
 * 包括Docker环境构建+Python环境构建，参考[通俗易懂的LLM](https://blog.csdn.net/qq_39439006/article/details/130796416?spm=1001.2014.3001.5502)。
