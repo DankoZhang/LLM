@@ -141,8 +141,8 @@ def train(args):
             a_ids = a_ids[: args.max_output_length - 2]
         
         # 拼接特殊符号与输入id
-        # chatglm: input_ids = q_ids + [gmask] + <sop> + a_ids + <eop>
-        # chatglm2: input_ids = [gmask] + <sop> + q_ids + a_ids + <eop>
+        # chatglm: input_ids = q_ids + [gmask] + <sop> + a_ids + <eos>
+        # chatglm2: input_ids = [gmask] + <sop> + q_ids + a_ids + <eos>
         input_ids = tokenizer.build_inputs_with_special_tokens(q_ids, a_ids)
         # 获取question长度, 用于构建label
         # question_length = input_ids.index(tokenizer.bos_token_id) # chatglm原始命令, 不适用chatglm2, 进行重写
