@@ -1,0 +1,27 @@
+deepspeed --include localhost:0,1 trainer_train.py \
+    --deepspeed ds_config/zero2.json \
+    --model_name_or_path /home/ubuntu/Large-Model/OpenGVLab/InternVL2_5-4B \
+    --train_type full \
+    --data_path /home/ubuntu/zhangce/train_script/data/final_merge_data.jsonl \
+    --remove_unused_columns false \
+    --bf16 true \
+    --fp16 false \
+    --dataloader_pin_memory True \
+    --dataloader_num_workers 10 \
+    --dataloader_persistent_workers True \
+    --output_dir output_model2 \
+    --num_train_epochs 3 \
+    --per_device_train_batch_size 1 \
+    --per_device_eval_batch_size 1 \
+    --gradient_accumulation_steps 16 \
+    --save_strategy epoch \
+    --eval_strategy steps \
+    --eval_step 100 \
+    --save_total_limit 2 \
+    --report_to tensorboard \
+    --learning_rate 1e-5 \
+    --logging_steps 100 \
+    --grad_checkpoint true \
+    --seed 42 \
+    --save_safetensors true \
+    --split_ratio 0.01
