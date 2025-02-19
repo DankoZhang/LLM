@@ -369,6 +369,7 @@ def load_model_tokenizer(model_args: ModelArguments, peft_args: PeftArguments, t
         low_cpu_mem_usage=True,
         trust_remote_code = True
         )
+    # 非常重要，防止显存爆掉
     if model_args.grad_checkpoint:
         model.language_model.config.use_cache = False
         model.vision_model.gradient_checkpointing = True
